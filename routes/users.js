@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var jwt = require('jsonwebtoken')
+var jwt = require('jsonwebtoken');
+var cookie = require('cookie');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
@@ -10,6 +11,12 @@ router.get('/', function(req, res) {
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
   res.setHeader("Access-Control-Allow-Origin", "https://keen-kalam-6de5f7.netlify.app");
+  res.setHeader('Set-Cookie', cookie.serialize('myAgainJwt2', jwt2, {
+    httpOnly: true,
+    maxAge: 60 * 60 * 24 * 7, // 1 week,
+    sameSite:"none",
+    secure:true
+  }));
   res.cookie("myAgainJwt2", jwt2, {httpOnly:true, sameSite:"none", secure:true}).json({"message": 'respond with a resource'});
 });
 

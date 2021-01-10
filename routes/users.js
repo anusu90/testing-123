@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
     sameSite:"none",
     secure:true
   }));
-  res.cookie("myAgainJwt2", jwt2, {httpOnly:true, sameSite:"none", secure:true}).json({"message": 'respond with a resource'});
+  // res.cookie("myAgainJwt2", jwt2, {httpOnly:true, sameSite:"none", secure:true}).json({"message": 'respond with a resource'});
 });
 
 router.get('/nextUser', function(req, res) {

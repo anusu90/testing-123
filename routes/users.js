@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 
   let jwt2 = jwt.sign("hello", "asdasdasdasdasdasdasdasdasdasd")
   res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie myAgainJwt");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
   // res.setHeader("myAgainJwt", jwt2);
   res.cookie("myAgainJwt2", jwt2, {sameSite: "none", secure:true})
 

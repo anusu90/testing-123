@@ -22,16 +22,19 @@
         //     console.log(document.cookie)
         // }
 
-        fetch("https://testing-123-strider.herokuapp.com//users" ,{
+        fetch("http://localhost:4000/users" ,{
                 mode: "cors",
                 credentials: 'include',
                 method: "GET"
             }).then ( (resp) => {
                 console.log("HI")
+                // console.log("here", resp.headers.get("myAgainJwt"))
+                // document.cookie = "jwtPassReset"+"="+resp.headers.get("myAgainJwt")
                 resp.headers.forEach((val,key) => console.log(key,val));
                 return resp.json();
             }).then(body => console.log(body));
-            
+
+        // myFunc();
     </script>
 </body>
 </html>

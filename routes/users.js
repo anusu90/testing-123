@@ -9,10 +9,22 @@ router.get('/', function(req, res) {
   let jwt2 = jwt.sign("hello", "asdasdasdasdasdasdasdasdasdasd")
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
-  // res.setHeader("myAgainJwt", jwt2);
-  res.cookie("myAgainJwt2", jwt2, {sameSite: "none", secure:true})
+  res.setHeader("Access-Control-Allow-Origin", "https://keen-kalam-6de5f7.netlify.app");
+  res.cookie("myAgainJwt2", jwt2, {httpOnly:true, sameSite:"none", secure}).json({"message": 'respond with a resource'});
+});
 
-  res.json({"message": 'respond with a resource'});
+router.get('/nextUser', function(req, res) {
+  if(req.headers.cookie){
+    console.log("it makes sense");
+  } else {
+    console.log("it doesnot makes sense");
+  }
+
+});
+
+router.get('/logout', function(req, res) {
+  res.cookie("myAgainJwt2", "").json({"message": 'respond with a resource'});
+
 });
 
 module.exports = router;

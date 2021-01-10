@@ -29,7 +29,7 @@
             }).then ( (resp) => {
                 console.log("HI")
                 console.log("here", resp.headers.get("myAgainJwt"))
-                document.cookie = "jwtPassReset"+"="+resp.headers.get("myAgainJwt")
+                // document.cookie = "jwtPassReset"+"="+resp.headers.get("myAgainJwt")
                 resp.headers.forEach((val,key) => console.log(key,val));
                 return resp.json();
             }).then(body => console.log(body));

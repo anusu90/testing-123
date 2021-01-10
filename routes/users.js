@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
   res.setHeader("Access-Control-Allow-Origin", "https://keen-kalam-6de5f7.netlify.app");
-  res.cookie("myAgainJwt2", jwt2, {httpOnly:true, sameSite:"none", secure}).json({"message": 'respond with a resource'});
+  res.cookie("myAgainJwt2", jwt2, {httpOnly:true, sameSite:"none", secure:true}).json({"message": 'respond with a resource'});
 });
 
 router.get('/nextUser', function(req, res) {

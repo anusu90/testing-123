@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function myFunc() {
+
+            let a = await fetch("http://localhost:4000/users", {
+                mode: "cors",
+                credentials: 'include'
+            })
+            let b = await a.json()
+            console.log(b);
+            console.log(a.Headers)
+            console.log(document.cookie)
+        }
+
+        fetch("http://localhost:4000/users" ,{
+                mode: "cors",
+                credentials: 'include',
+                method: "GET"
+            }).then ( (resp) => {
+                console.log(resp.headers.get("myAgainJwt"))
+                resp.headers.forEach((val,key) => console.log(key,val));
+                return resp.json();
+            }).then (body => console.log(body))
+
+        // myFunc();
+    </script>
+</body>
+</html>

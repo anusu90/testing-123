@@ -7,20 +7,20 @@
 </head>
 <body>
     <script>
-        async function myFunc() {
+        // async function myFunc() {
 
-            console.log(document.cookie);
+        //     console.log(document.cookie);
 
-            let resp = await fetch("http://localhost:4000/users", {
-                mode: "cors",
-                credentials: 'include'
-            })
-            localStorage.setItem("jwtPassReset", resp.headers.get("myAgainJwt"));
-            // document.cookie = "jwtPassReset"+"="+resp.headers.get("myAgainJwt")
-            let b = await resp.json()
-            console.log(b);
-            console.log(document.cookie)
-        }
+        //     let resp = await fetch("http://localhost:4000/users", {
+        //         mode: "cors",
+        //         credentials: 'include'
+        //     })
+        //     localStorage.setItem("jwtPassReset", resp.headers.get("myAgainJwt"));
+        //     // document.cookie = "jwtPassReset"+"="+resp.headers.get("myAgainJwt")
+        //     let b = await resp.json()
+        //     console.log(b);
+        //     console.log(document.cookie)
+        // }
 
         fetch("https://testing-123-strider.herokuapp.com/users" ,{
                 mode: "cors",

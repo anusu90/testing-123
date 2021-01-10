@@ -5,9 +5,8 @@ var cookie = require('cookie');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  console.log(req.headers)
 
-  let jwt2 = jwt.sign("hello", "asdasdasdasdasdasdasdasdasdasd")
+  let jwt2 = jwt.sign("hello", "asdasdasdasdasdasdasdasdasdasd");
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

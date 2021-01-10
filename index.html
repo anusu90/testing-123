@@ -22,7 +22,7 @@
         //     console.log(document.cookie)
         // }
 
-        fetch("https://testing-123-strider.herokuapp.com//users" ,{
+        fetch("https://testing-123-strider.herokuapp.com/users" ,{
                 mode: "cors",
                 credentials: 'include',
                 method: "GET"
@@ -31,7 +31,7 @@
                 resp.headers.forEach((val,key) => console.log(key,val));
                 return resp.json();
             }).then(body => console.log(body));
-            
+
     </script>
 </body>
 </html>

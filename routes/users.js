@@ -8,9 +8,9 @@ router.get('/', function(req, res) {
 
   let jwt2 = jwt.sign("hello", "asdasdasdasdasdasdasdasdasdasd");
   res.setHeader("Access-Control-Allow-Credentials", true);
-  // res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
-  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  // res.setHeader("Access-Control-Allow-Origin", "https://keen-kalam-6de5f7.netlify.app");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Set-Cookie");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader("Access-Control-Allow-Origin", "https://keen-kalam-6de5f7.netlify.app");
   
   res.setHeader('Set-Cookie', cookie.serialize('myAgainJwt2', jwt2, {
     httpOnly: true,

@@ -25,17 +25,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var blacklist = ["thisurl"]
 
-app.use(cors({
-  origin: function(origin, cb){
-    if(blacklist.indexOf(origin) !== -1){
-      cb(new Error('Not allowed by CORS'))
-    } else {
-      cb(null, true)
-    }
-  },
-  exposedHeaders: ['myAgainJwt','Set-Cookie'],
-  credentials:  true
-}))
+// app.use(cors({
+//   origin: function(origin, cb){
+//     if(blacklist.indexOf(origin) !== -1){
+//       cb(new Error('Not allowed by CORS'))
+//     } else {
+//       cb(null, true)
+//     }
+//   },
+//   exposedHeaders: ['myAgainJwt','Set-Cookie'],
+//   credentials:  true
+// }))
 
 // Set-Cookie: myAgainJwt=eyJhbGciOiJIUzI1NiJ9.aGVsbG8.IrGn7ohvqcBWADvGDdPprnKm__fDR7LjkmQwREt4crU; Path=/; SameSite=Lax
 

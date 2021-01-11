@@ -25,7 +25,7 @@ app.use(cors({
 
 app.use(function(req,res,next){
   console.log("HI",req.headers);
-  let allowedOrigin = ["http://127.0.0.1:5500/JS/Guvi-Day-37-Session/index.html", "https://keen-kalam-6de5f7.netlify.app/", "http://127.0.0.1:5500"]
+  let allowedOrigin = ["http://127.0.0.1:5500/JS/Guvi-Day-37-Session/index.html", "https://keen-kalam-6de5f7.netlify.app", "http://127.0.0.1:5500"]
   console.log(allowedOrigin.indexOf(req.headers.origin));
   if (allowedOrigin.indexOf(req.headers.origin) !== -1){
     res.header("Access-Control-Allow-Origin", req.headers.origin)
